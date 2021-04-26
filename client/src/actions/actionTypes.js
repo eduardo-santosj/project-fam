@@ -1,0 +1,1 @@
+export const GET_ALL_CLIENT = 'GET_ALL_CLIENT';
