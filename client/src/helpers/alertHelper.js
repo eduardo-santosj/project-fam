@@ -1,18 +1,22 @@
-import React, { Component, useState } from 'react'
+import React, { Component } from 'react'
 import { Alert } from 'react-bootstrap'
 
 class ShowAlert extends Component {
   ShowAlerts() {
-    let Title = ''
-    let Text = ''
+    let Title, Text, variant = ''
 
-    if(this.props.type === 'danger') {
-      Title = 'Erro no servidor'
-      Text = 'Tente novamente mais tarde!'
+    if(this.props.type) {
+      variant = 'success'
+      Title = 'Sucesso'
+      Text = this.props.message
+    } else {
+      variant = 'danger'
+      Title = 'Erro'
+      Text = this.props.message
     }
     if (this.props.show) {
       return (
-        <Alert variant={this.props.type} className="fade-alert">
+        <Alert variant={variant} className="fade-alert">
           <Alert.Heading>{Title}</Alert.Heading>
           <p className="mb-0">
             {Text}
@@ -22,7 +26,6 @@ class ShowAlert extends Component {
     }
   }
   render() {
-    console.log(this.state, this.props)
     return (
       this.ShowAlerts()
     )

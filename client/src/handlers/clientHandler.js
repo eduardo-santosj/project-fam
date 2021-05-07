@@ -7,11 +7,11 @@ export const clientHandler = {
   createClient
 };
 
-function getClient() {
+function getClient(email) {
   const requestOptions = {
     method: "GET",
   };
-  return fetch(apiGatewayPrefix.concat("/clients"), requestOptions)
+  return fetch(apiGatewayPrefix.concat(`/client/${email}`), requestOptions)
     .then(apiHelpers.handleStatus)
     .then(apiHelpers.handleResponse);
 };
@@ -19,7 +19,7 @@ function getClient() {
 function createClient(params) {
   const requestOptions = {
     method: "POST",
-    // headers: { 'Content-Type': 'application/json' },
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(params)
   };
   return fetch(apiGatewayPrefix.concat("/client"), requestOptions)

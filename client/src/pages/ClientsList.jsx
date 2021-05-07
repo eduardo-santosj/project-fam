@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { 
     TableContainer, 
     Table, 
@@ -19,7 +19,6 @@ const ClientsList = () => {
         setLoading(true)
 
         clientActions.getClient( (response) => {
-            console.log(response)
             if(response !== undefined)
                 setClient(response.data)
             setLoading(false)

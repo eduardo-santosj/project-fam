@@ -15,7 +15,7 @@ class HomePage extends Component {
                 <Container>
                     <Row>
                         <Col xs={12}>
-                            <h4 className="text-uppercase text-center pt-3 pb-4">Animais para Doação</h4>
+                            <h4 className="text-uppercase text-center pt-3 pb-4">Animais para Adoção</h4>
                         </Col>
 
                         <Col xs={12} md={6} lg={4}>
